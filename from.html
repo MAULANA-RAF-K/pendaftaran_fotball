@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pendaftaran Pemain Sepak Bola</title>
+</head>
+
+<body>
+    <h2>Pendaftaran Pemain Sepak Bola</h2>
+
+    <form>
+
+        <label>Nama Pemain:</label><br>
+        <input type="text" name="nama" placeholder="Masukkan Nama"><br><br>
+
+        <label>Tanggal Lahir:</label><br>
+        <input type="date" name="tanggal_lahir"><br><br>
+
+        <label>Nomor Punggung:</label><br>
+        <input type="text" name="nomor" pattern="[0-9]{1,2}" placeholder="1-99"><br><br>
+
+        <label>Posisi:</label><br>
+        <select name="posisi">
+            <option>Pilih Posisi</option>
+            <option>Kiper</option>
+            <option>Bek</option>
+            <option>Gelandang</option>
+            <option>Penyerang</option>
+        </select><br><br>
+
+        <label>Kaki Dominan:</label><br>
+        <input type="radio" name="kaki" value="Kanan">
+        Kanan
+        <input type="radio" name="kaki" value="Kiri">
+        Kiri
+        <input type="radio" name="kaki" value="Keduanya">
+        Keduanya
+
+        <br><br>
+
+        <label>Pengalaman Bermain:</label><br>
+        <input type="checkbox" name="pengalaman" value="Sekolah">
+        Tim Sekolah
+
+        <input type="checkbox" name="pengalaman" value="Klub">
+        Klub
+
+        <input type="checkbox" name="pengalaman" value="Turnamen">
+        Turnamen
+
+        <br><br>
+
+        <label>Alasan Mendaftar:</label><br>
+        <textarea name="alasan" rows="4" cols="30"></textarea>
+
+        <br><br>
+
+        <label>Masukkan Foto Pemain:</label><br>
+        <input type="file" name="foto">
+
+        <br><br>
+
+        <input type="submit" value="Simpan">
+        <input type="reset" value="Batal">
+    </form>
+
+</body>
+</html>
