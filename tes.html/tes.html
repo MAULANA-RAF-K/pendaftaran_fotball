@@ -1,0 +1,117 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Score Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #eaf2ff;
+            padding: 40px;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 350px;
+            margin: auto;
+            box-shadow: 0 4px 12px #aaa;
+        }
+
+        h1 {
+            color: #2455a4;
+        }
+
+        #score {
+            font-size: 60px;
+            color: #16a085;
+            margin: 20px;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        #add {
+            background: #27ae60;
+        }
+
+        #subtract {
+            background: #e74c3c;
+        }
+
+        #reset {
+            background: #3498db;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>My Score Counter</h1>
+
+        <h2 id="score">0</h2>
+
+        <button id="add" onclick="tambah()">+5</button>
+        <button id="subtract" onclick="kurang()">-5</button>
+        <button id="reset" onclick="reset()">Reset</button>
+
+        <p id="message">Ayo kumpulkan skor!</p>
+    </div>
+
+    <script>
+        let score = 0;
+
+        function updateScore() {
+            document.getElementById("score").innerText = score;
+
+            if (score >= 50) {
+                document.getElementById("message").innerText =
+                    "Hebat! Kamu mendapatkan skor tinggi!";
+            } else if (score < 0) {
+                document.getElementById("message").innerText =
+                    "Skor kamu negatif!";
+            } else {
+                document.getElementById("message").innerText =
+                    "Terus kumpulkan skor!";
+            }
+        }
+
+        function tambah() {
+            score += 5;
+            updateScore();
+        }
+
+        function kurang() {
+            score -= 5;
+            updateScore();
+        }
+
+        function reset() {
+            score = 0;
+            updateScore();
+        }
+
+        document.addEventListener("keyup", function(e) {
+            if (e.key === "ArrowUp") {
+                tambah();
+            } else if (e.key === "ArrowDown") {
+                kurang();
+            } else if (e.key === "Enter") {
+                reset();
+            }
+        });
+    </script>
+
+</body>
+</html>

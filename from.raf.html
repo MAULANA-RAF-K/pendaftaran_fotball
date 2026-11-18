@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pendaftaran Pemain Sepak Bola</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        form {
+            width: 500px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        h2 {
+            text-align: center;
+            color: green;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: auto;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+
+<body>
+
+<form action="#" method="post" enctype="multipart/form-data">
+
+    <h2>FORM PENDAFTARAN PEMAIN SEPAK BOLA</h2>
+
+    <fieldset>
+        <legend>Data Pemain</legend>
+
+        <!-- Text Input -->
+        <label for="nama">Nama Lengkap:</label>
+        <input type="text" id="nama" name="nama"
+               placeholder="Masukkan nama lengkap"
+               required
+               pattern="[A-Za-z ]+">
+
+        <!-- Date Input -->
+        <label for="tanggal">Tanggal Lahir:</label>
+        <input type="date" id="tanggal" name="tanggal" required>
+
+        <!-- Text Input + Pattern -->
+        <label for="telepon">Nomor HP:</label>
+        <input type="text" id="telepon" name="telepon"
+               placeholder="08xxxxxxxxxx"
+               pattern="08[0-9]{8,11}"
+               required>
+
+        <!-- Radio Button -->
+        <label>Jenis Kelamin:</label><br>
+        <input type="radio" id="laki" name="jenis_kelamin" value="Laki-laki" required>
+        <label for="laki">Laki-laki</label>
+
+        <input type="radio" id="perempuan" name="jenis_kelamin" value="Perempuan">
+        <label for="perempuan">Perempuan</label>
+
+        <br><br>
+
+        <!-- Select -->
+        <label for="posisi">Posisi Pemain:</label>
+        <select id="posisi" name="posisi" required>
+            <option value="">-- Pilih Posisi --</option>
+            <option value="Kiper">Kiper</option>
+            <option value="Bek">Bek</option>
+            <option value="Gelandang">Gelandang</option>
+            <option value="Sayap">Sayap</option>
+            <option value="Penyerang">Penyerang</option>
+        </select>
+
+        <!-- Datalist -->
+        <label for="klub">Klub Sebelumnya:</label>
+        <input list="daftar-klub" id="klub" name="klub"
+               placeholder="Pilih atau ketik klub">
+
+        <datalist id="daftar-klub">
+            <option value="SMKN 1 Pacitan">
+            <option value="Perspa">
+            <option value="Arema FC">
+            <option value="Persebaya">
+            <option value="Persis Solo">
+        </datalist>
+
+        <!-- Checkbox -->
+        <label>Pengalaman:</label><br>
+        <input type="checkbox" id="turnamen" name="pengalaman" value="Turnamen">
+        <label for="turnamen">Pernah mengikuti turnamen</label><br>
+
+        <input type="checkbox" id="sekolah" name="pengalaman" value="Sekolah">
+        <label for="sekolah">Pernah bermain untuk tim sekolah</label><br>
+
+        <input type="checkbox" id="klub" name="pengalaman" value="Klub">
+        <label for="klub">Pernah bermain di klub</label>
+
+        <br><br>
+
+        <!-- Textarea -->
+        <label for="alasan">Alasan Mengikuti Seleksi:</label>
+        <textarea id="alasan" name="alasan" rows="5"
+                  placeholder="Tuliskan alasan Anda..."></textarea>
+
+        <!-- File -->
+        <label for="foto">Upload Foto Pemain:</label>
+        <input type="file" id="foto" name="foto"
+               accept="image/*" required>
+
+    </fieldset>
+
+    <br>
+
+    <!-- Submit Button -->
+    <button type="submit">DAFTAR SEKARANG</button>
+
+</form>
+
+</body>
+</html>

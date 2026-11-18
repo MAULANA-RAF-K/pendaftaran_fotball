@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Form Pendaftaran Pemain Sepak Bola</title>
+
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+
+        table {
+            width: 90%;
+            font-family: Arial, sans-serif;
+        }
+
+        th {
+            background-color: lightgreen;
+        }
+
+        input, select, button {
+            margin: 5px;
+            padding: 7px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Form Pendaftaran Pemain Sepak Bola</h2>
+
+    <form id="form-pemain">
+
+        <label>Nama Lengkap:</label><br>
+        <input type="text" id="nama" required>
+        <br>
+
+        <label>Nama Panggilan:</label><br>
+        <input type="text" id="panggilan" required>
+        <br>
+
+        <label>Posisi:</label><br>
+        <select id="posisi" required>
+            <option value="">-- Pilih Posisi --</option>
+            <option value="Kiper">Kiper</option>
+            <option value="Bek">Bek</option>
+            <option value="Gelandang">Gelandang</option>
+            <option value="Penyerang">Penyerang</option>
+        </select>
+        <br>
+
+        <label>Nomor Punggung:</label><br>
+        <input type="number" id="nomor" min="1" max="99" required>
+        <br>
+
+        <label>Nama Tim:</label><br>
+        <input type="text" id="tim" required>
+        <br>
+
+        <button type="submit">Daftar Pemain</button>
+
+    </form>
+
+    <hr>
+
+    <h2>Data Pemain</h2>
+
+    <table id="data-pemain">
+
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>Panggilan</th>
+                <th>Posisi</th>
+                <th>No. Punggung</th>
+                <th>Tim</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <!-- Data pemain akan dimasukkan di sini -->
+        </tbody>
+
+    </table>
+
+
+    <script>
+
+        // Data pemain
+        const pemain = [
+            {
+                no: 1,
+                nama: "Rafka Maulana",
+                panggilan: "Rafka",
+                posisi: "Gelandang",
+                nomor: 24,
+                tim: "SKASA FC"
+            },
+            {
+                no: 2,
+                nama: "Budi",
+                panggilan: "Budi",
+                posisi: "Penyerang",
+                nomor: 9,
+                tim: "SKASA FC"
+            },
+            {
+                no: 3,
+                nama: "Andi",
+                panggilan: "Andi",
+                posisi: "Bek",
+                nomor: 4,
+                tim: "SKASA FC"
+            }
+        ];
+
+
+        // Menampilkan data pemain ke tabel
+        function tampilkanPemain() {
+
+            document.querySelector("#data-pemain tbody").innerHTML =
+
+                pemain.map(function(data) {
+
+                    return `
+                        <tr>
+                            <td>${data.no}</td>
+                            <td>${data.nama}</td>
+                            <td>${data.panggilan}</td>
+                            <td>${data.posisi}</td>
+                            <td>${data.nomor}</td>
+                            <td>${data.tim}</td>
+                        </tr>
+                    `;
+
+                }).join("");
+        }
+
+
+        // Menambahkan pemain dari form
+        document.querySelector("#form-pemain").addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const dataBaru = {
+
+                no: pemain.length + 1,
+
+                nama: document.querySelector("#nama").value,

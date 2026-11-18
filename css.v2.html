@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Putra Wijaya Store</title>
+
+    <!-- CSS EKSTERNAL
+    Jika menggunakan file terpisah:
+    <link rel="stylesheet" href="style.css">
+    -->
+
+    <!-- CSS INTERNAL -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #00695c;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        nav {
+            background-color: #004d40;
+            text-align: center;
+            padding: 12px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+        }
+
+        .judul {
+            text-align: center;
+            color: #00695c;
+            margin-top: 25px;
+        }
+
+        .produk {
+            text-align: center;
+        }
+
+        .card {
+            display: inline-block;
+            background-color: white;
+            width: 200px;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px #bbb;
+        }
+
+        .card h3 {
+            color: #00695c;
+        }
+
+        button {
+            border: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .pesan {
+            background-color: #eeeeee;
+            text-align: center;
+            padding: 25px;
+            margin-top: 20px;
+        }
+
+        input, select, textarea {
+            width: 250px;
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+
+        textarea {
+            height: 70px;
+        }
+
+        .kontak {
+            text-align: center;
+            padding: 25px;
+        }
+
+        footer {
+            background-color: #004d40;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>PUTRA WIJAYA</h1>
+        <p>Pesan Mudah, Nikmat Setiap Saat!</p>
+    </header>
+
+    <nav>
+        <a href="#produk">Produk</a>
+        <a href="#pesan">Pesan</a>
+        <a href="#kontak">Kontak</a>
+    </nav>
+
+    <h2 class="judul" id="produk">Produk Kami</h2>
+
+    <div class="produk">
+
+        <div class="card">
+            <h3>Es Kopi Susu</h3>
+            <p>Rp10.000</p>
+
+            <!-- CSS INLINE -->
+            <button style="background-color:#00897b; color:white;">
+                Pesan
+            </button>
+        </div>
+
+        <div class="card">
+            <h3>Es Coklat</h3>
+            <p>Rp8.000</p>
+
+            <button style="background-color:#00897b; color:white;">
+                Pesan
+            </button>
+        </div>
+
+        <div class="card">
+            <h3>Roti Bakar</h3>
+            <p>Rp12.000</p>
+
+            <button style="background-color:#00897b; color:white;">
+                Pesan
+            </button>
+        </div>
+
+    </div>
+
+    <div class="pesan" id="pesan">
+
+        <h2>Form Pemesanan</h2>
+
+        <form>
+
+            <label>Nama</label><br>
+            <input type="text" placeholder="Masukkan nama">
+
+            <br>
+
+            <label>Pilih Produk</label><br>
+            <select>
+                <option>Es Kopi Susu</option>
+                <option>Es Coklat</option>
+                <option>Roti Bakar</option>
+            </select>
+
+            <br>
+
+            <label>Jumlah</label><br>
+            <input type="number" min="1" value="1">
+
+            <br>
+
+            <label>Alamat</label><br>
+            <textarea placeholder="Masukkan alamat"></textarea>
+
+            <br>
+
+            <button type="submit"
+                    style="background-color:#00695c; color:white;">
+                Kirim Pesanan
+            </button>
+
+        </form>
+
+    </div>
+
+    <div class="kontak" id="kontak">
+        <h2>Kontak Kami</h2>
+        <p>WhatsApp: 08xxxxxxxxxx</p>
+        <p>Instagram: @putrawijaya</p>
+    </div>
+
+    <footer>
+        <p>© 2026 PUTRA WIJAYA</p>
+    </footer>
+
+</body>
+</html>
